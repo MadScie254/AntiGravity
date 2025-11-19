@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     # Local apps
     'apps.accounts',
     'apps.tasks',
-    'apps.sessions',
+    'apps.focus_sessions',
     'apps.analytics',
 ]
 

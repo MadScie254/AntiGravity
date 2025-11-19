@@ -1,10 +1,10 @@
 """
-Sessions app configuration.
+Focus sessions app configuration.
 """
 from django.apps import AppConfig
 
 
-class SessionsConfig(AppConfig):
+class FocusSessionsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.sessions'
+    name = 'apps.focus_sessions'
     verbose_name = 'Focus Sessions'

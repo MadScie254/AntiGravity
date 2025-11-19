@@ -51,7 +51,7 @@ urlpatterns = [
     # API v1
     path('api/v1/auth/', include('apps.accounts.urls')),
     path('api/v1/tasks/', include('apps.tasks.urls')),
-    path('api/v1/sessions/', include('apps.sessions.urls')),
+    path('api/v1/sessions/', include('apps.focus_sessions.urls')),
     path('api/v1/analytics/', include('apps.analytics.urls')),
     
     # OAuth (django-allauth)
