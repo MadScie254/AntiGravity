@@ -3,7 +3,7 @@ Views for analytics app.
 """
 from datetime import datetime, timedelta
 from rest_framework import viewsets, status
-from rest_framework.decorators import api_view, action
+from rest_framework.decorators import api_view, action, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from django.db.models import Sum, Avg, Count
