@@ -8,7 +8,7 @@ from datetime import timedelta
 import random
 
 from apps.tasks.models import Task, Tag
-from apps.sessions.models import FocusSession
+from apps.focus_sessions.models import FocusSession
 from apps.analytics.models import Habit, AnalyticsAggregate
 
 User = get_user_model()
