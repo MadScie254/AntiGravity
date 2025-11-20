@@ -1,95 +1,112 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
-    darkMode: 'class',
+    darkMode: ["class"],
     content: [
-        './pages/**/*.{js,ts,jsx,tsx,mdx}',
-        './components/**/*.{js,ts,jsx,tsx,mdx}',
-        './app/**/*.{js,ts,jsx,tsx,mdx}',
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
             colors: {
-                primary: {
-                    DEFAULT: '#2563eb',
-                    50: '#eff6ff',
-                    100: '#dbeafe',
-                    200: '#bfdbfe',
-                    300: '#93c5fd',
-                    400: '#60a5fa',
-                    500: '#3b82f6',
-                    600: '#2563eb',
-                    700: '#1d4ed8',
-                    800: '#1e40af',
-                    900: '#1e3a8a',
-                    950: '#172554',
+                // Cosmic Background Colors
+                cosmic: {
+                    navy: '#0A0E27',
+                    purple: '#1A0B2E',
+                    cyan: '#0D7377',
                 },
-                accent: {
-                    DEFAULT: '#06b6d4',
-                    50: '#ecfeff',
-                    100: '#cffafe',
-                    200: '#a5f3fc',
-                    300: '#67e8f9',
-                    400: '#22d3ee',
-                    500: '#06b6d4',
-                    600: '#0891b2',
-                    700: '#0e7490',
-                    800: '#155e75',
-                    900: '#164e63',
-                    950: '#083344',
+                background: "hsl(var(--background))",
+                foreground: "hsl(var(--foreground))",
+                card: {
+                    DEFAULT: "hsl(var(--card))",
+                    foreground: "hsl(var(--card-foreground))",
+                },
+                popover: {
+                    DEFAULT: "hsl(var(--popover))",
+                    foreground: "hsl(var(--popover-foreground))",
+                },
+                primary: {
+                    DEFAULT: "hsl(var(--primary))",
+                    foreground: "hsl(var(--primary-foreground))",
+                },
+                secondary: {
+                    DEFAULT: "hsl(var(--secondary))",
+                    foreground: "hsl(var(--secondary-foreground))",
                 },
                 muted: {
-                    DEFAULT: '#6b7280',
-                    50: '#f9fafb',
-                    100: '#f3f4f6',
-                    200: '#e5e7eb',
-                    300: '#d1d5db',
-                    400: '#9ca3af',
-                    500: '#6b7280',
-                    600: '#4b5563',
-                    700: '#374151',
-                    800: '#1f2937',
-                    900: '#111827',
-                    950: '#030712',
+                    DEFAULT: "hsl(var(--muted))",
+                    foreground: "hsl(var(--muted-foreground))",
+                },
+                accent: {
+                    DEFAULT: "hsl(var(--accent))",
+                    foreground: "hsl(var(--accent-foreground))",
+                },
+                destructive: {
+                    DEFAULT: "hsl(var(--destructive))",
+                    foreground: "hsl(var(--destructive-foreground))",
+                },
+                border: "hsl(var(--border))",
+                input: "hsl(var(--input))",
+                ring: "hsl(var(--ring))",
+                chart: {
+                    "1": "hsl(var(--chart-1))",
+                    "2": "hsl(var(--chart-2))",
+                    "3": "hsl(var(--chart-3))",
+                    "4": "hsl(var(--chart-4))",
+                    "5": "hsl(var(--chart-5))",
+                },
+            },
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                'gradient-cosmic': 'linear-gradient(135deg, #0A0E27 0%, #1A0B2E 50%, #0D7377 100%)',
+                'gradient-primary': 'linear-gradient(135deg, #667EEA 0%, #764BA2 100%)',
+                'gradient-shimmer': 'linear-gradient(135deg, #667EEA, #764BA2, #F093FB, #667EEA)',
+            },
+            backdropBlur: {
+                xs: '2px',
+                '3xl': '40px',
+            },
+            boxShadow: {
+                'glass': '0 8px 32px rgba(0, 0, 0, 0.4)',
+                'glass-lg': '0 16px 64px rgba(0, 0, 0, 0.5)',
+                'glow': '0 0 60px rgba(99, 102, 241, 0.3)',
+                'glow-cyan': '0 0 60px rgba(6, 182, 212, 0.3)',
+                'lift': '0 12px 40px rgba(0, 0, 0, 0.3)',
+                'lift-lg': '0 20px 60px rgba(0, 0, 0, 0.4)',
+            },
+            animation: {
+                'gradient-shift': 'gradientShift 8s ease infinite',
+                'float': 'float 6s ease-in-out infinite',
+                'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                'shimmer': 'shimmer 2s linear infinite',
+            },
+            keyframes: {
+                gradientShift: {
+                    '0%, 100%': { backgroundPosition: '0% 50%' },
+                    '50%': { backgroundPosition: '100% 50%' },
+                },
+                float: {
+                    '0%, 100%': { transform: 'translateY(0px)' },
+                    '50%': { transform: 'translateY(-20px)' },
+                },
+                pulseGlow: {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.5' },
+                },
+                shimmer: {
+                    '0%': { backgroundPosition: '-200% 0' },
+                    '100%': { backgroundPosition: '200% 0' },
                 },
             },
             borderRadius: {
-                lg: '1rem',
-                md: '0.75rem',
-                sm: '0.5rem',
-            },
-            fontFamily: {
-                sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
-            },
-            spacing: {
-                '18': '4.5rem',
-                '88': '22rem',
-                '128': '32rem',
-            },
-            animation: {
-                'fade-in': 'fadeIn 150ms ease-in',
-                'slide-in': 'slideIn 200ms ease-out',
-                'scale-in': 'scaleIn 150ms ease-out',
-            },
-            keyframes: {
-                fadeIn: {
-                    '0%': { opacity: '0' },
-                    '100%': { opacity: '1' },
-                },
-                slideIn: {
-                    '0%': { transform: 'translateY(-8px)', opacity: '0' },
-                    '100%': { transform: 'translateY(0)', opacity: '1' },
-                },
-                scaleIn: {
-                    '0%': { transform: 'scale(0.95)', opacity: '0' },
-                    '100%': { transform: 'scale(1)', opacity: '1' },
-                },
+                lg: "var(--radius)",
+                md: "calc(var(--radius) - 2px)",
+                sm: "calc(var(--radius) - 4px)",
             },
         },
     },
-    plugins: [
-        require('@tailwindcss/forms'),
-    ],
-}
+    plugins: [require("tailwindcss-animate")],
+};
 
-export default config
+export default config;
